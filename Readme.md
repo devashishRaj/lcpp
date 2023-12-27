@@ -1,6 +1,10 @@
 ## C++ snippets and notes .
 
-
+```text 
+std::cerr is unbuffered, which means anything you send to it will output immediately.  
+This helps ensure all debug output appears as soon as possible (at the cost of some performance,  
+which we usually don’t care about when debugging).
+```
 
 - **Primary Goal: Make It Work**
   - The fundamental objective in programming is to ensure that the program functions
