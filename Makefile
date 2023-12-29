@@ -1,7 +1,7 @@
 # test  "& fg" after ./exe in run section
 # Define the C++ compiler and flags
 CXX = clang++
-CXXFLAGS = -std=c++20 -Wall
+CXXFLAGS = -std=c++23 -Wall
 
 # Define the directory where the compiled executable will be placed
 BIN_DIR = bin
