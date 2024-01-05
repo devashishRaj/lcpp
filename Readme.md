@@ -1,10 +1,11 @@
 ## C++ snippets and notes .
 > NOTE :may wanna use https://github.com/fabiospampinato/vscode-highlight or any regex based markdown highlighter for TODO , WARNING , BestPractice , NOTE and FIX etc .
 
-Sample cli to produce a executable file "test"
+Sample cli to produce a executable file "test" , you can use 'nasa' target in makefile
+ which will compile with stricter flags
 ```zsh
 
-clang++ -std=c++23 -Wall -Wshadow -Werror -Wextra -Wconversion -Wsign-conversion -Weffc++ -g -glldb CH7/ch7_d.cpp -o bin/test
+clang++ -std=c++23 -Wall -g -glldb CH7/ch7_d.cpp -o bin/test
 
 ```
 
