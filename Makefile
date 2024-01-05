@@ -1,8 +1,8 @@
 # test  "& fg" after ./exe in run section
 # Define the C++ compiler and flags
 CXX = clang++
+CXX_NASAFLAGS = -std=c++23 -Wall -Wshadow -Werror -Wextra -Wconversion -Wsign-conversion -Weffc++
 CXXFLAGS = -std=c++23 -Wall
-
 # Define the directory where the compiled executable will be placed
 BIN_DIR = bin
 
@@ -23,6 +23,16 @@ endif
 # This target is executed when running "make all"
 all: $(EXECUTABLE)
 	@echo "Build completed: $(EXECUTABLE)"
+
+# Target: "nasa"
+# This target is executed when running "make run"
+nasa: $(FILE)
+	mkdir -p $(BIN_DIR)
+	$(CXX) $(CXX_NASAFLAGS) $< -o $(EXECUTABLE)
+	@echo
+#@gtime -v ./$(EXECUTABLE)
+	@env time --format="Command '%C' ran for '%E' (%e seconds)" ./$(EXECUTABLE)
+	@echo
 
 # Target: "run"
 # This target is executed when running "make run"
@@ -69,4 +79,4 @@ clean:
 	rm -f $(EXECUTABLE)
 
 # Specify that these targets don't correspond to actual files
-.PHONY: all run iprunbug runbug clean
+.PHONY: all nasa run iprunbug runbug clean

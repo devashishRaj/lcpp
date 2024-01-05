@@ -1,4 +1,12 @@
 ## C++ snippets and notes .
+> NOTE :may wanna use https://github.com/fabiospampinato/vscode-highlight or any regex based markdown highlighter for TODO , WARNING , BestPractice , NOTE and FIX etc .
+
+Sample cli to produce a executable file "test"
+```zsh
+
+clang++ -std=c++23 -Wall -Wshadow -Werror -Wextra -Wconversion -Wsign-conversion -Weffc++ -g -glldb CH7/ch7_d.cpp -o bin/test
+
+```
 
 ```text 
 std::cerr is unbuffered, which means anything you send to it will output immediately.  
